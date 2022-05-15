@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{ url_for('static',filename='styles/icon.ico') }}" >
+
+    <title>Input 5 cities that you have been to</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href= "{{ url_for('static',filename='styles/bootstrap.min.css') }}" type= "text/css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href= "{{ url_for('static',filename='styles/signin.css') }}" type= "text/css" rel="stylesheet">
+
+    <!-- autocomplete -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/auto-complete.css') }}">
+
+  </head>
+
+  <body class="text-center" data-new-gr-c-s-check-loaded="14.1039.0" data-gr-ext-installed="">
+    <form class="form-signin" action="" method="post">
+      <img class="mb-4" src="{{ url_for('static',filename='styles/bootstrap-solid2.svg') }}" alt="" width="72" height="72">
+      <h1 class="h4 mb-3 font-weight-normal">Please input 5 cities that<br/>you have been to</h1>
+      <label for="inputCity1" class="sr-only">City1</label>
+      <input type="first" id="inputCity1" class="form-control" name="city1" placeholder="City1" required="" autofocus="">
+      <label for="inputCity2" class="sr-only">City2</label>
+      <input type="middle" id="inputCity2" class="form-control" name="city2" placeholder="City2" required="">
+      <label for="inputCity3" class="sr-only">City3</label>
+      <input type="middle" id="inputCity3" class="form-control" name="city3" placeholder="City3" required="">
+      <label for="inputCity4" class="sr-only">City4</label>
+      <input type="middle" id="inputCity4" class="form-control" name="city4" placeholder="City4" required="">
+      <label for="inputCity5" class="sr-only">City5</label>
+      <input type="last" id="inputCity5" class="form-control" name="city5" placeholder="City5" required="">
+      <br>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+      <p class="mt-5 mb-3 text-muted">CSE 6242 proj.</p>
+    </form>
+
+  <script src="auto-complete.js"></script>
+<script>
+    var city_list = {{ data|tojson }}["city_list"];
+
+    var my_autoComplete1 = new autoComplete({
+        selector:'#inputCity1',
+        minChars: 1,
+        source: function(term, suggest){
+            term = term.toLowerCase();
+            var choices = city_list;
+            var matches = [];
+            for (i=0; i<choices.length; i++)
+                if (~choices[i].toLowerCase().indexOf(term)) matches.push(choices[i]);
+            suggest(matches);
+        }
+    });
+
+    var my_autoComplete2 = new autoComplete({
+        selector:'#inputCity2',
+        minChars: 1,
+        source: function(term, suggest){
+            term = term.toLowerCase();
+            var choices = city_list;
+            var matches = [];
+            for (i=0; i<choices.length; i++)
+                if (~choices[i].toLowerCase().indexOf(term)) matches.push(choices[i]);
+            suggest(matches);
+        }
+    });
+
+    var my_autoComplete3 = new autoComplete({
+        selector:'#inputCity3',
+        minChars: 1,
+        source: function(term, suggest){
+            term = term.toLowerCase();
+            var choices = city_list;
+            var matches = [];
+            for (i=0; i<choices.length; i++)
+                if (~choices[i].toLowerCase().indexOf(term)) matches.push(choices[i]);
+            suggest(matches);
+        }
+    });
+
+    var my_autoComplete4 = new autoComplete({
+        selector:'#inputCity4',
+        minChars: 1,
+        source: function(term, suggest){
+            term = term.toLowerCase();
+            var choices = city_list;
+            var matches = [];
+            for (i=0; i<choices.length; i++)
+                if (~choices[i].toLowerCase().indexOf(term)) matches.push(choices[i]);
+            suggest(matches);
+        }
+    });
+
+    var my_autoComplete5 = new autoComplete({
+        selector:'#inputCity5',
+        minChars: 1,
+        source: function(term, suggest){
+            term = term.toLowerCase();
+            var choices = city_list;
+            var matches = [];
+            for (i=0; i<choices.length; i++)
+                if (~choices[i].toLowerCase().indexOf(term)) matches.push(choices[i]);
+            suggest(matches);
+        }
+    });
+</script>
+
+
+
+
+
+
+</body>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+</html>
