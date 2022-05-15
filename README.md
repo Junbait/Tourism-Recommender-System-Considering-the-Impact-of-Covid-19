@@ -21,7 +21,7 @@ in the folder.
 
 INSTALLATION:
 
-run `pip install -r /path/to/requirements.txt` in terminal at `CODE` folder.
+run `pip install -r /path/to/requirements.txt` in terminal at current folder.
 
 ********************************************************************************
 
